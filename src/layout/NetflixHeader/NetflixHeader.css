@@ -1,0 +1,80 @@
+.banner {
+  background-image: url('../../../public/images/banner.jpg');
+  background-size: cover;
+  background-position: center center;
+  color: white;
+  object-fit: contain;
+  height: 448px;
+}
+
+.banner__contents {
+  margin-left: 30px;
+  padding-top: 140px;
+  height: 190px;
+}
+
+.banner__title {
+  font-size: 3rem;
+  font-weight: 800;
+  padding-bottom: 0.3rem;
+}
+
+.synopsis {
+  color: #fff;
+  line-height: normal;
+  width: 100%;
+  font-weight: 400;
+  font-size: calc(18px + (4) * ((100vw - 300px) / (1600 - 300)));
+  text-shadow: 2px 2px 4px rgb(0 0 0 / 45%);
+  margin-top: 0.1vw;
+  max-width: 500px;
+  padding-top: 1rem;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+}
+.banner__buttons {
+  margin-top: 1vw;
+}
+.banner__button {
+  cursor: pointer;
+  outline: none;
+  border: none;
+  font-weight: 700;
+  font-size: 2vh;
+  border-radius: 0.2vw;
+  padding-left: 2rem;
+  padding-right: 2rem;
+  margin-right: 1rem;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+}
+.banner__button:hover {
+  opacity: 0.7;
+}
+
+.banner__buttonInfo {
+  color: #fff;
+  background-color: rgba(51, 51, 51, 0.5);
+}
+
+.banner__buttonplay {
+  color: #000;
+  background-color: #e6e6e6;
+}
+
+.banner__buttonplay:hover {
+  opacity: 0.7;
+}
+
+.banner--fadeBottom {
+  margin-top: 145px;
+  height: 7.4rem;
+  background-image: linear-gradient(
+    180deg,
+    transparent,
+    rgba(37, 37, 37, 0.61),
+    #111
+  );
+}
