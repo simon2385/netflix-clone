@@ -1,9 +1,11 @@
 import React from 'react';
+import { imagePathOriginal, TYPE_MOVIE} from '../../config';
+
 import './NetflixHeader.css';
 
-const NetflixHeader = ({ movie, type='movie' }) => {
-  const title = type === 'movie' ? movie?.title : movie?.name;
-  const imageUrl = `https://image.tmdb.org/t/p/original${movie?.backdrop_path}`;
+const NetflixHeader = ({ movie, type = TYPE_MOVIE }) => {
+  const title = type === TYPE_MOVIE ? movie?.title : movie?.name;
+  const imageUrl = `${imagePathOriginal}${movie?.backdrop_path}`;
   const banner = {
     backgroundImage: `url(${imageUrl})`,
     backgroundSize: 'cover',
@@ -12,9 +14,9 @@ const NetflixHeader = ({ movie, type='movie' }) => {
     objectFit: 'contain',
     height: '448px',
   };
-   
+
   if (!movie) <></>;
-  
+
   if (movie) {
     return (
       <>

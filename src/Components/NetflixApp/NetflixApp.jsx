@@ -3,23 +3,30 @@ import NetflixAppBar from '../../layout/NetflixAppBar/NetflixAppBar';
 import NetflixHeader from '../../layout/NetflixHeader/NetflixHeader';
 import NetflixFooter from '../../layout/NetflixFooter/NetflixFooter';
 import NetflixRow from '../NetflixRow/NetflixRow';
+import { clientApi } from '../../utils/clientApi';
+import {
+  getRandomIntInclusive,
+  getRandomType,
+  getRandomId,
+} from '../../utils/helper';
+import { apiKey, lang } from '../../config';
+
 import './NetflixApp.css';
 
 import axios from 'axios';
 
 const NetflixApp = () => {
-  const defaultMovieId = '71446';
+  const [type] = React.useState(getRandomType());
+
+  const defaultMovieId = getRandomId(type);
+
   const [headerMovie, setHeaderMovie] = React.useState(defaultMovieId);
-  const apiKey = '8c9be3a874cc17880b1a805b0ae9d862';
-  const lang = 'en-usa';
-  const type = 'tv';
-  const url = `https://api.themoviedb.org/3/${type}/${defaultMovieId}?api_key=${apiKey}&language=${lang}`;
 
   React.useEffect(() => {
-    axios
-      .get(url)
+    clientApi(`${type}/${defaultMovieId}`)
       .then(response => setHeaderMovie(response))
       .catch(err => console.error(err));
+    // eslint-disable-next-line
   }, []);
 
   console.log(headerMovie);
